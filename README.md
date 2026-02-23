@@ -55,6 +55,23 @@ Format options go under `format: envelope-typst:`:
 | `recipient-shift-x` | Horizontal offset for the recipient block | `-10%` |
 | `recipient-shift-y` | Vertical offset for the recipient block | `10%` |
 
+
+## Supported Envelope Types
+
+| Type | Dimensions (H × W) | Notes |
+|---|---|---|
+| `C4` | 229 × 324 mm | |
+| `C5` | 162 × 229 mm | |
+| `C6` | 114 × 162 mm | |
+| `DL` | 110 × 220 mm | Default |
+| `B4` | 250 × 353 mm | |
+| `B5` | 176 × 250 mm | |
+| `#10` | 105 × 241 mm | US #10 |
+| `#9` | 98 × 225 mm | US #9 |
+| `Monarch` | 98 × 190 mm | |
+| `A2` | 111 × 146 mm | |
+
+
 ## Batch Rendering
 
 To generate one envelope PDF per recipient from a CSV file, use the included `render_envelopes.R` script. It renders `template-batch.qmd` — a minimal template with no hardcoded addresses — injecting sender and recipient data at render time via `--metadata-file`.
@@ -95,21 +112,4 @@ The script writes a temporary YAML file for each recipient containing the sender
 quarto render template-batch.qmd --output <name>.pdf --metadata-file <tmp>.yaml
 ```
 
-This avoids hardcoding addresses in the template and allows `--metadata-file` to inject values cleanly.
-
 > **Note:** `sender` and `recipient` must not be defined in the front matter of `template-batch.qmd`, as document front matter takes precedence over `--metadata-file`.
-
-## Supported Envelope Types
-
-| Type | Dimensions (H × W) | Notes |
-|---|---|---|
-| `C4` | 229 × 324 mm | |
-| `C5` | 162 × 229 mm | |
-| `C6` | 114 × 162 mm | |
-| `DL` | 110 × 220 mm | Default |
-| `B4` | 250 × 353 mm | |
-| `B5` | 176 × 250 mm | |
-| `#10` | 105 × 241 mm | US #10 |
-| `#9` | 98 × 225 mm | US #9 |
-| `Monarch` | 98 × 190 mm | |
-| `A2` | 111 × 146 mm | |
