@@ -1,12 +1,12 @@
 
 // This is an example typst template (based on the default template that ships
 // with Quarto). It defines a typst function named 'article' which provides
-// various customization options. This function is called from the 
+// various customization options. This function is called from the
 // 'typst-show.typ' file (which maps Pandoc metadata function arguments)
 //
 // If you are creating or packaging a custom typst template you will likely
-// want to replace this file and 'typst-show.typ' entirely. You can find 
-// documentation on creating typst templates and some examples here: 
+// want to replace this file and 'typst-show.typ' entirely. You can find
+// documentation on creating typst templates and some examples here:
 //   - https://typst.app/docs/tutorial/making-a-template/
 //   - https://github.com/typst/templates
 
@@ -47,36 +47,37 @@
   recipient-fontsize: 14pt,
   recipient-shift-x: -10%,
   recipient-shift-y: 10%
-  ) = { 
-  
+  ) = {
+
   let (height, width) = envelope_dimensions(envelope_type)
-  
+
   set page(
     width: width,
     height: height,
-    margin: (x: 0.5cm, y: 0.5cm)
+    margin: (x: 0.5cm, y: 0.5cm),
+    numbering: none
   )
-  
+
   set text(font: font)
-           
+
   place(
     top + left,
     rect(width: 30%,
          height: 25%,
-         fill: gray,
+         fill: white,
          align(
           left,
           text(sender, size: sender-fontsize))
           )
   )
-  
+
   place(
     horizon + right,
     dx: recipient-shift-x,
     dy: recipient-shift-y,
-    rect(width: 35%,
+    rect(width: 40%,
         height: 30%,
-        fill: gray,
+        fill: white,
         align(
           left,
           text(recipient, size: recipient-fontsize)

@@ -1,0 +1,5 @@
+---
+format:
+  envelope-typst:
+    envelope_type: "C6"
+---

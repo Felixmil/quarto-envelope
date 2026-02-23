@@ -14,14 +14,24 @@
 
 #show: doc => envelope(
 
-recipient: [$recipient$],
+$if(recipient)$
+$if(recipient/allbutlast)$
+  recipient: [$for(recipient)$$recipient$$sep$\ $endfor$],
+$else$
+  recipient: [$recipient$],
+$endif$
+$endif$
 
 $if(envelope_type)$
   envelope_type: [$envelope_type$],
 $endif$
 
 $if(sender)$
+$if(sender/allbutlast)$
+  sender: [$for(sender)$$sender$$sep$\ $endfor$],
+$else$
   sender: [$sender$],
+$endif$
 $endif$
 
 $if(sender-fontsize)$
