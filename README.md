@@ -52,11 +52,17 @@ Format options go under `format: envelope-typst:`:
 | `envelope_type` | Envelope size (see supported types below) | `"DL"` |
 | `sender-fontsize` | Font size for the sender address | `11pt` |
 | `recipient-fontsize` | Font size for the recipient address | `14pt` |
+| `sender-width` | Width of the sender block | `30%` |
+| `recipient-width` | Width of the recipient block | `40%` |
 | `recipient-shift-x` | Horizontal offset for the recipient block | `-10%` |
 | `recipient-shift-y` | Vertical offset for the recipient block | `10%` |
 
 
 ## Supported Envelope Types
+
+You can specify `envelope_type` as a named size string or as a custom `[height, width]` array in millimeters.
+
+### Named sizes
 
 | Type | Dimensions (H × W) | Notes |
 |---|---|---|
@@ -70,6 +76,18 @@ Format options go under `format: envelope-typst:`:
 | `#9` | 98 × 225 mm | US #9 |
 | `Monarch` | 98 × 190 mm | |
 | `A2` | 111 × 146 mm | |
+
+### Custom size
+
+Pass a two-element array `[height, width]` in mm:
+
+```yaml
+format:
+  envelope-typst:
+    envelope_type:
+      - 125
+      - 185
+```
 
 
 ## Batch Rendering

@@ -12,7 +12,10 @@
 
 
 #let envelope_dimensions(envelope_type) = {
-  if envelope_type == [C4] {
+  // Accept a (height, width) array in mm, e.g. (125, 185)
+  if type(envelope_type) == array {
+    (envelope_type.at(0) * 1mm, envelope_type.at(1) * 1mm)
+  } else if envelope_type == [C4] {
     (22.9cm, 32.4cm)
   } else if envelope_type == [C5] {
     (16.2cm, 22.9cm)
@@ -45,11 +48,18 @@
   font:(),
   sender-fontsize: 11pt,
   recipient-fontsize: 14pt,
+
+  sender-width: 30%,
+  recipient-width: 40%,
   recipient-shift-x: -10%,
   recipient-shift-y: 10%
   ) = {
 
   let (height, width) = envelope_dimensions(envelope_type)
+
+  // Allow numeric font sizes (e.g. 12 → 12pt)
+  let sender-fontsize = if type(sender-fontsize) == int or type(sender-fontsize) == float { sender-fontsize * 1pt } else { sender-fontsize }
+  let recipient-fontsize = if type(recipient-fontsize) == int or type(recipient-fontsize) == float { recipient-fontsize * 1pt } else { recipient-fontsize }
 
   set page(
     width: width,
@@ -62,7 +72,7 @@
 
   place(
     top + left,
-    rect(width: 30%,
+    rect(width: sender-width,
          height: 25%,
          fill: white,
          align(
@@ -75,7 +85,7 @@
     horizon + right,
     dx: recipient-shift-x,
     dy: recipient-shift-y,
-    rect(width: 40%,
+    rect(width: recipient-width,
         height: 30%,
         fill: white,
         align(

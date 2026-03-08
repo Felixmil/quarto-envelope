@@ -1,5 +1,11 @@
 ---
 format:
   envelope-typst:
-    envelope_type: "C6"
+    envelope_type:
+      - 125
+      - 185
+    recipient-shift-x: -5%
+    recipient-fontsize: 12
+    sender-fontsize: 11
+    recipient-width: 45%
 ---

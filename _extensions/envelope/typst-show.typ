@@ -23,7 +23,11 @@ $endif$
 $endif$
 
 $if(envelope_type)$
+$if(envelope_type/allbutlast)$
+  envelope_type: ($for(envelope_type)$$envelope_type$$sep$, $endfor$),
+$else$
   envelope_type: [$envelope_type$],
+$endif$
 $endif$
 
 $if(sender)$
@@ -35,20 +39,28 @@ $endif$
 $endif$
 
 $if(sender-fontsize)$
-  sender-fontsize: [$sender-fontsize$],
+  sender-fontsize: $sender-fontsize$,
 $endif$
 
 $if(recipient-fontsize)$
-  recipient-fontsize: [$recipient-fontsize$],
+  recipient-fontsize: $recipient-fontsize$,
+$endif$
+
+$if(sender-width)$
+  sender-width: $sender-width$,
+$endif$
+
+$if(recipient-width)$
+  recipient-width: $recipient-width$,
 $endif$
 
 
 $if(recipient-shift-x)$
-  recipient-shift-x: [$recipient-shift-x$],
+  recipient-shift-x: $recipient-shift-x$,
 $endif$
 
 $if(recipient-shift-y)$
-  recipient-shift-y: [$recipient-shift-y$],
+  recipient-shift-y: $recipient-shift-y$,
 $endif$
   
   )
