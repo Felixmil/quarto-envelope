@@ -23,11 +23,7 @@ $endif$
 $endif$
 
 $if(envelope_type)$
-$if(envelope_type/allbutlast)$
-  envelope_type: ($for(envelope_type)$$envelope_type$$sep$, $endfor$),
-$else$
   envelope_type: [$envelope_type$],
-$endif$
 $endif$
 
 $if(sender)$
