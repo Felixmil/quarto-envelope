@@ -38,7 +38,7 @@ quarto render template.qmd
 
 Here's the output:
 
-![](screenshot.png)
+[![](screenshot.png)](template.pdf)
 
 ## Options
 
