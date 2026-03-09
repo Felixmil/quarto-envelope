@@ -1,7 +1,7 @@
 ---
 format:
   envelope-typst:
-    envelope_type: "C6"
+    envelope_type: C6
 sender:
   - "John Doe"
   - "123 Main Street"

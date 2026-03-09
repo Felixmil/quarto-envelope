@@ -36,6 +36,10 @@ Then render with:
 quarto render template.qmd
 ```
 
+Here's the output:
+
+![](screenshot.png)
+
 ## Options
 
 `sender` and `recipient` are top-level metadata keys (not under `format:`):
