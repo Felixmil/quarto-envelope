@@ -3,11 +3,11 @@ format:
   envelope-typst:
     envelope_type: C6
 sender:
-  - "John Doe"
-  - "123 Main Street"
-  - "Springfield, IL 62701"
+  - "Jean Dupont"
+  - "12 rue de la Paix"
+  - "75001 Paris"
 recipient:
-  - "Jane Doe"
-  - "456 Elm Street"
-  - "Springfield, IL 62702"
+  - "Marie Martin"
+  - "45 avenue du Prado"
+  - "13008 Marseille"
 ---
