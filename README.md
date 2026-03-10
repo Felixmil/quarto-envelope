@@ -68,7 +68,7 @@ Format options go under `format: envelope-typst:`:
 
 ## Supported Envelope Types
 
-You can specify `envelope_type` as a named size string or as a custom `[height, width]` array in millimeters.
+You can specify `envelope_type` as a named size string or as a custom `"HxW"` string in millimeters.
 
 ### Named sizes
 
@@ -87,14 +87,12 @@ You can specify `envelope_type` as a named size string or as a custom `[height, 
 
 ### Custom size
 
-Pass a two-element array `[height, width]` in mm:
+Pass a `"HxW"` string in mm:
 
 ``` yaml
 format:
   envelope-typst:
-    envelope_type:
-      - 125
-      - 185
+    envelope_type: 125x185
 ```
 
 ## Batch Rendering

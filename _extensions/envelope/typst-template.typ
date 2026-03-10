@@ -12,28 +12,29 @@
 
 
 #let envelope_dimensions(envelope_type) = {
-  // Accept a (height, width) array in mm, e.g. (125, 185)
-  if type(envelope_type) == array {
-    (envelope_type.at(0) * 1mm, envelope_type.at(1) * 1mm)
-  } else if envelope_type == [C4] {
+  // Accept "HxW" string in mm, e.g. "125x185", or a predefined format name
+  let parts = envelope_type.split("x")
+  if parts.len() == 2 {
+    (float(parts.at(0)) * 1mm, float(parts.at(1)) * 1mm)
+  } else if envelope_type == "C4" {
     (22.9cm, 32.4cm)
-  } else if envelope_type == [C5] {
+  } else if envelope_type == "C5" {
     (16.2cm, 22.9cm)
-  } else if envelope_type == [C6] {
+  } else if envelope_type == "C6" {
     (11.4cm, 16.2cm)
-  } else if envelope_type == [DL] {
+  } else if envelope_type == "DL" {
     (11.0cm, 22.0cm)
-  } else if envelope_type == [B4] {
+  } else if envelope_type == "B4" {
     (25.0cm, 35.3cm)
-  } else if envelope_type == [B5] {
+  } else if envelope_type == "B5" {
     (17.6cm, 25.0cm)
-  } else if envelope_type == [#10] { // US #10 Envelope
+  } else if envelope_type == "#10" { // US #10 Envelope
     (10.5cm, 24.1cm)
-  } else if envelope_type == [#9] { // US #9 Envelope
+  } else if envelope_type == "#9" { // US #9 Envelope
     (9.8cm, 22.5cm)
-  } else if envelope_type == [Monarch] { // Monarch Envelope
+  } else if envelope_type == "Monarch" { // Monarch Envelope
     (9.8cm, 19.0cm)
-  } else if envelope_type == [A2] { // A2 Envelope
+  } else if envelope_type == "A2" { // A2 Envelope
     (11.1cm, 14.6cm)
   } else {
     panic("Unknown envelope type:", envelope_type)

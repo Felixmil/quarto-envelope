@@ -23,7 +23,7 @@ $endif$
 $endif$
 
 $if(envelope_type)$
-  envelope_type: [$envelope_type$],
+  envelope_type: "$envelope_type$",
 $endif$
 
 $if(sender)$
