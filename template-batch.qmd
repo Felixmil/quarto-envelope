@@ -1,7 +1,7 @@
 ---
 format:
   envelope-typst:
-    envelope_type: "125x185"
+    size: 125x185
     recipient-shift-x: -5%
     recipient-fontsize: 12
     sender-fontsize: 11

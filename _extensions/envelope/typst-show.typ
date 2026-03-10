@@ -22,8 +22,8 @@ $else$
 $endif$
 $endif$
 
-$if(envelope_type)$
-  envelope_type: "$envelope_type$",
+$if(size)$
+  envelope_type: "$size$",
 $endif$
 
 $if(sender)$

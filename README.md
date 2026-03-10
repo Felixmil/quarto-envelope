@@ -19,7 +19,7 @@ Set the format to `envelope-typst` in your document's YAML front matter and prov
 ---
 format:
   envelope-typst:
-    envelope_type: "C6"
+    size: C6
 sender:
   - "Jean Dupont"
   - "12 rue de la Paix"
@@ -58,7 +58,7 @@ Format options go under `format: envelope-typst:`:
 
 | Option               | Description                               | Default |
 |----------------------|-------------------------------------------|---------|
-| `envelope_type`      | Envelope size (see supported types below) | `"DL"`  |
+| `size`               | Envelope size (see supported types below) | `DL`    |
 | `sender-fontsize`    | Font size for the sender address          | `11pt`  |
 | `recipient-fontsize` | Font size for the recipient address       | `14pt`  |
 | `sender-width`       | Width of the sender block                 | `30%`   |
@@ -68,7 +68,7 @@ Format options go under `format: envelope-typst:`:
 
 ## Supported Envelope Types
 
-You can specify `envelope_type` as a named size string or as a custom `"HxW"` string in millimeters.
+You can specify `size` as a named size string or as a custom `"HxW"` string in millimeters.
 
 ### Named sizes
 
@@ -92,7 +92,7 @@ Pass a `"HxW"` string in mm:
 ``` yaml
 format:
   envelope-typst:
-    envelope_type: 125x185
+    size: 125x185
 ```
 
 ## Batch Rendering

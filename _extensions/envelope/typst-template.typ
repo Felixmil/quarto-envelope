@@ -45,7 +45,7 @@
 #let envelope(
   sender: none,
   recipient: none,
-  envelope_type: "DL",
+  envelope_type: "DL", // set via 'size' YAML key
   font:(),
   sender-fontsize: 11pt,
   recipient-fontsize: 14pt,

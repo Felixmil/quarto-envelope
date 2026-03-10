@@ -1,7 +1,7 @@
 ---
 format:
   envelope-typst:
-    envelope_type: "C6"
+    size: C6
 sender:
   - "Jean Dupont"
   - "12 rue de la Paix"
